@@ -145,7 +145,14 @@ function Run_Excel(){
 		}
         
 		m = m.split(',');
-		nCol = m.indexOf('day 1');
+		
+		for (i = 0; i < m.length; i++){
+			var tmp = m.indexOf('day 1');
+			if (tmp !== -1){
+				nCol = tmp;
+				break;
+			}
+		}
 		
 		for (var i = 0; i < nCol; i++){
 				excel_output[i] = [];
