@@ -147,9 +147,9 @@ function Run_Excel(){
 		m = m.split(',');
 		
 		for (i = 0; i < m.length; i++){
-			var tmp = m.indexOf('day 1');
+			var tmp = m[i].indexOf('day 1');
 			if (tmp !== -1){
-				nCol = tmp;
+				nCol = i;
 				break;
 			}
 		}
