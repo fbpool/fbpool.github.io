@@ -110,6 +110,11 @@ function RunAll() {
 			//shorten game message for games that haven't started
 			game_data.message[g] = json_data.events[g].status.type.detail;
 			game_data.message[g] = game_data.message[g].replace(',', '');
+			game_data.message[g] = game_data.message[g].replace('Fri ', 'FRI');
+			game_data.message[g] = game_data.message[g].replace('Sat ', 'SAT');
+			game_data.message[g] = game_data.message[g].replace('Sun ', 'SUN');
+			game_data.message[g] = game_data.message[g].replace('Mon ', 'MON');
+			game_data.message[g] = game_data.message[g].replace('Thu ', 'THURS');
 			game_data.message[g] = game_data.message[g].replace('th', '');
 			game_data.message[g] = game_data.message[g].replace('at', '');
 			game_data.message[g] = game_data.message[g].replace('August ', '8/');
