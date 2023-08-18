@@ -105,24 +105,25 @@ function RunAll() {
 		//some edits for games that haven't started
 		if (game_data.status[g] == 'pre'){
 			//have pregame scores appear blank instead of 0
-			game_data.homeScore[g] = []
-			game_data.awayScore[g] = []
+			game_data.homeScore[g] = [];
+			game_data.awayScore[g] = [];
 			//shorten game message for games that haven't started
-			game_data.message[g] = json_data.events[g].status.type.detail
-			game_data.message[g] = game_data.message[g].replace(',', '')
-			game_data.message[g] = game_data.message[g].replace('th', '')
-			game_data.message[g] = game_data.message[g].replace('at', '')
-			game_data.message[g] = game_data.message[g].replace('September ', '9/')
-			game_data.message[g] = game_data.message[g].replace('October ', '10/')
-			game_data.message[g] = game_data.message[g].replace('November ', '11/')
-			game_data.message[g] = game_data.message[g].replace('December ', '12/')
-			game_data.message[g] = game_data.message[g].replace('January ', '1/')
-			game_data.message[g] = game_data.message[g].replace(' EDT', '')
-			game_data.message[g] = game_data.message[g].replace(' EDS', '')
-			game_data.message[g] = game_data.message[g].replace('st ', ' ')
-			game_data.message[g] = game_data.message[g].replace('nd ', ' ')
-			game_data.message[g] = game_data.message[g].replace('rd ', ' ')
-			game_data.message[g] = game_data.message[g].replace('th ', ' ')
+			game_data.message[g] = json_data.events[g].status.type.detail;
+			game_data.message[g] = game_data.message[g].replace(',', '');
+			game_data.message[g] = game_data.message[g].replace('th', '');
+			game_data.message[g] = game_data.message[g].replace('at', '');
+			game_data.message[g] = game_data.message[g].replace('August ', '8/');
+			game_data.message[g] = game_data.message[g].replace('September ', '9/');
+			game_data.message[g] = game_data.message[g].replace('October ', '10/');
+			game_data.message[g] = game_data.message[g].replace('November ', '11/');
+			game_data.message[g] = game_data.message[g].replace('December ', '12/');
+			game_data.message[g] = game_data.message[g].replace('January ', '1/');
+			game_data.message[g] = game_data.message[g].replace(' EDT', '');
+			game_data.message[g] = game_data.message[g].replace(' EDS', '');
+			game_data.message[g] = game_data.message[g].replace('st ', ' ');
+			game_data.message[g] = game_data.message[g].replace('nd ', ' ');
+			game_data.message[g] = game_data.message[g].replace('rd ', ' ');
+			game_data.message[g] = game_data.message[g].replace('th ', ' ');
 		}
 		
 		
