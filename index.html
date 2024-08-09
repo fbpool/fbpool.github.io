@@ -164,7 +164,7 @@ function Run_Excel(){
 				excel_output[i] = [];
 		}
 		for (var i = 0; i < m.length; i++){
-				excel_output[i%nCol].push(m[i]);
+				excel_output[i%nCol].push(m[i].trim());
 		}
 		//figure out game order
 		for (var j = 1; j <= numGames; j++){
