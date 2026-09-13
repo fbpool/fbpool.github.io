@@ -140,25 +140,13 @@ function RunAll() {
 
 function Run_Excel(){
 	$.get(xl, function(data){
-        m = data;
+        var rows = data.trim().split(/\r?\n/);
 
-        fb_test = m.indexOf('\n');
-        
-        if (fb_test == -1){
-			m = m.replace(/\r/g, ",");
-		} else {
-			m = m.replace(/\n/g, ",");
-		}
-        
-		m = m.split(',');
+		// Number of columns comes directly from the header
+		nCol = rows[0].split(',').length;
 		
-		for (i = 0; i < m.length; i++){
-			var tmp = m[i].indexOf('day 1');
-			if (tmp !== -1){
-				nCol = i;
-				break;
-			}
-		}
+		// Flatten CSV into your existing m structure
+		m = rows.join(',').split(',');
 		
 		for (var i = 0; i < nCol; i++){
 				excel_output[i] = [];
